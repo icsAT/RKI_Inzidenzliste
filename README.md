@@ -1,6 +1,6 @@
 # RKI_Inzidenzliste
 
-COVID-19 Inzidenz-Widget auf Basis der RKI Daten für iOS zur Anzeige mehrerer Landkreise innerhalb Deutschlands 🇩🇪
+Scriptable iOS COVID-19 Inzidenz-Widget auf Basis der RKI Daten zur Anzeige mehrerer Landkreise innerhalb Deutschlands 🇩🇪
 
 
 # Beschreibung:
@@ -11,7 +11,7 @@ Da mir bisher ein iOS-Widget gefehlt hat, dass mehrere Inzidenzwerte gleichzeiti
 
 Für das Widget ist die App Scriptable auf dem iOS-Device erforderlich.
 In Scriptable wird ein neues Skript mit dem Code auf dieser Seite erstellt.
-Im Anschluss kann ein kleines Scriptable Widget erstellt werden, dem dieses Skript zugewiesen wird.
+Im Anschluss kann ein mittleres oder großes Scriptable Widget erstellt werden, dem dieses Skript zugewiesen wird.
 Da detaillierte Anleitungen überall zu finden sind verzichte ich hier darauf.
 
 
