@@ -3,8 +3,8 @@
 // icon-color: red; icon-glyph: angry;
 
 // RKI Inzidenz Widget
-// von icsAT (https://gist.github.com/icsAT)
-// Version 0.81 vom 17.02.2022
+// von icsAT (https://github.com/icsAT/RKI_Inzidenzliste)
+// Version 0.82 vom 03.03.2023
 
 // Daten vom Robert Koch Institut
 // Licence: Robert Koch-Institut (RKI), dl-de/by-2-0
@@ -58,9 +58,10 @@ const rkiAPI_lkID = (lkID) => `https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arc
 const rkiAPI_lkName = (lkName) => `https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_Landkreisdaten/FeatureServer/0/query?where=GEN%20%3D%20%27${lkName}%27&outFields=${lkAusgabe}&returnGeometry=false&outSR=4326&f=json`
 
 // URL's um die neuen Fälle im Landkreis, Bundesland und in Deutschland zu ermitteln
-const rkiAPI_lkAnzahlNeueFaelle = (lkID) => `https://services7.arcgis.com/mOBPykOjAyBO2ZKk/ArcGIS/rest/services/Covid19_hubv/FeatureServer/0/query?where=IdLandkreis=${lkID}+AND+NeuerFall%20in%20(-1%2C1)&outFields=*&returnGeometry=false&outStatistics=%5B%7B%22statisticType%22%3A%22sum%22%2C%22onStatisticField%22%3A%22AnzahlFall%22%2C%22outStatisticFieldName%22%3A%22lkAnzahlNeueFaelle%22%7D%5D&f=json`
-const rkiAPI_blAnzahlNeueFaelle = (blID) => `https://services7.arcgis.com/mOBPykOjAyBO2ZKk/ArcGIS/rest/services/Covid19_hubv/FeatureServer/0/query?where=IdBundesland=${blID}+AND+NeuerFall%20in%20(-1%2C1)&outFields=*&returnGeometry=false&outStatistics=%5B%7B%22statisticType%22%3A%22sum%22%2C%22onStatisticField%22%3A%22AnzahlFall%22%2C%22outStatisticFieldName%22%3A%22blAnzahlNeueFaelle%22%7D%5D&f=json`
-const rkiAPI_deAnzahlNeueFaelle = 'https://services7.arcgis.com/mOBPykOjAyBO2ZKk/ArcGIS/rest/services/Covid19_hubv/FeatureServer/0/query?where=NeuerFall%20in%20(-1%2C1)&outFields=*&returnGeometry=false&outStatistics=%5B%7B%22statisticType%22%3A%22sum%22%2C%22onStatisticField%22%3A%22AnzahlFall%22%2C%22outStatisticFieldName%22%3A%22deAnzahlNeueFaelle%22%7D%5D&f=json'
+const rkiAPI_lkAnzahlNeueFaelle = (lkID) => `https://services7.arcgis.com/mOBPykOjAyBO2ZKk/ArcGIS/rest/services/rki_key_data_hubv/FeatureServer/0/query?where=AdmUnitId=${lkID}&outFields=AnzFallNeu&returnGeometry=false&outSR=4326&f=json`
+const rkiAPI_blAnzahlNeueFaelle = (blID) => `https://services7.arcgis.com/mOBPykOjAyBO2ZKk/ArcGIS/rest/services/rki_key_data_hubv/FeatureServer/0/query?where=BundeslandId=${blID}&outFields=AnzFallNeu&returnGeometry=false&outSR=4326&f=json`
+const rkiAPI_deAnzahlNeueFaelle = 'https://services7.arcgis.com/mOBPykOjAyBO2ZKk/ArcGIS/rest/services/rki_key_data_hubv/FeatureServer/0/query?where=AdmUnitId=0+AND+BundeslandId=0&outFields=AnzFallNeu&returnGeometry=false&outSR=4326&f=json'
+
 
 // Bundesländer Mapping
 const BUNDESLAENDER_SHORT = {
@@ -268,7 +269,7 @@ async function lkDatenHolen(parameter) {
 async function deDatenHolen() {
 
     let deFallDaten = await new Request(rkiAPI_deAnzahlNeueFaelle).loadJSON()
-    let deAnzahlNeueFaelle = deFallDaten.features[0].attributes.deAnzahlNeueFaelle
+    let deAnzahlNeueFaelle = deFallDaten.features[0].attributes.AnzFallNeu
     if (deAnzahlNeueFaelle == null) {
         deAnzahlNeueFaelle = 0
     }
@@ -283,13 +284,13 @@ async function anzDatenHolen(lkID, blID) {
     try {
         
         let lkFallDaten = await new Request(rkiAPI_lkAnzahlNeueFaelle(lkID)).loadJSON()
-        let lkAnzahlNeueFaelle = lkFallDaten.features[0].attributes.lkAnzahlNeueFaelle
+        let lkAnzahlNeueFaelle = lkFallDaten.features[0].attributes.AnzFallNeu
         if (lkAnzahlNeueFaelle == null) {
             lkAnzahlNeueFaelle = 0
         }
 
         let blFallDaten = await new Request(rkiAPI_blAnzahlNeueFaelle(blID)).loadJSON()
-        let blAnzahlNeueFaelle = blFallDaten.features[0].attributes.blAnzahlNeueFaelle
+        let blAnzahlNeueFaelle = blFallDaten.features[0].attributes.AnzFallNeu
         if (blAnzahlNeueFaelle == null) {
             blAnzahlNeueFaelle = 0
         }
