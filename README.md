@@ -11,7 +11,7 @@ Da mir bisher ein iOS-Widget gefehlt hat, dass mehrere Inzidenzwerte gleichzeiti
 
 ![Bildschirmfoto 2023-03-04 um 00 14 54](https://user-images.githubusercontent.com/74063738/222853433-123aac02-f3b0-4978-9f7a-eecd48963417.png)
 
-Zum Festlegen der Kreise kann der genaue Name oder Nummer des Kreises beim RKI eingegeben werden. Die einzelnen Kreise werden durch Semikolon getrennt. Bei Eingabe von "lokal" wird der Kraus auf Basis des aktuellen Standortes ausgegeben.
+Zum Festlegen der Kreise kann der genaue Name oder Nummer des Kreises beim RKI eingegeben werden. Die einzelnen Kreise werden durch Semikolon getrennt. Bei Eingabe von "lokal" wird der Kreis auf Basis des aktuellen Standortes ausgegeben.
 
 Für das Widget ist die App Scriptable auf dem iOS-Device erforderlich.
 In Scriptable wird ein neues Skript mit dem Code auf dieser Seite erstellt.
