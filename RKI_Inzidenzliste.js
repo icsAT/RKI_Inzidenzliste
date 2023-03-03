@@ -4,7 +4,7 @@
 
 // RKI Inzidenz Widget
 // von icsAT (https://github.com/icsAT/RKI_Inzidenzliste)
-// Version 0.82 vom 03.03.2023
+// Version 0.83 vom 03.03.2023
 
 // Daten vom Robert Koch Institut
 // Licence: Robert Koch-Institut (RKI), dl-de/by-2-0
@@ -59,7 +59,7 @@ const rkiAPI_lkName = (lkName) => `https://services7.arcgis.com/mOBPykOjAyBO2ZKk
 
 // URL's um die neuen Fälle im Landkreis, Bundesland und in Deutschland zu ermitteln
 const rkiAPI_lkAnzahlNeueFaelle = (lkID) => `https://services7.arcgis.com/mOBPykOjAyBO2ZKk/ArcGIS/rest/services/rki_key_data_hubv/FeatureServer/0/query?where=AdmUnitId=${lkID}&outFields=AnzFallNeu&returnGeometry=false&outSR=4326&f=json`
-const rkiAPI_blAnzahlNeueFaelle = (blID) => `https://services7.arcgis.com/mOBPykOjAyBO2ZKk/ArcGIS/rest/services/rki_key_data_hubv/FeatureServer/0/query?where=BundeslandId=${blID}&outFields=AnzFallNeu&returnGeometry=false&outSR=4326&f=json`
+const rkiAPI_blAnzahlNeueFaelle = (blID) => `https://services7.arcgis.com/mOBPykOjAyBO2ZKk/ArcGIS/rest/services/rki_key_data_hubv/FeatureServer/0/query?where=AdmUnitId=${blID}+AND+BundeslandId=${blID}&outFields=AnzFallNeu&returnGeometry=false&outSR=4326&f=json`
 const rkiAPI_deAnzahlNeueFaelle = 'https://services7.arcgis.com/mOBPykOjAyBO2ZKk/ArcGIS/rest/services/rki_key_data_hubv/FeatureServer/0/query?where=AdmUnitId=0+AND+BundeslandId=0&outFields=AnzFallNeu&returnGeometry=false&outSR=4326&f=json'
 
 
