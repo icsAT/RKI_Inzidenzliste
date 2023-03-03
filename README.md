@@ -17,8 +17,17 @@ Da detaillierte Anleitungen überall zu finden sind verzichte ich hier darauf.
 
 # Versionen:
 
+
+Version 0.82:
+
+Änderung der Datenquelle für neue Fallzahlen.
+
+
 Version 0.81:
+
 Reaktion auf die geänderte API RKI COVID-19 beim RKI.
 
+
 Version 0.80:
+
 Erste funktionierende Testversion.
