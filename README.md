@@ -9,7 +9,7 @@ Scriptable iOS COVID-19 Inzidenz-Widget auf Basis der RKI Daten zur Anzeige mehr
 
 Da mir bisher ein iOS-Widget gefehlt hat, dass mehrere Inzidenzwerte gleichzeitig darstellt habe ich dies auf Basis mittlerer bzw. großer Widgets realisiert.
 
-![IMG_1023](https://user-images.githubusercontent.com/74063738/98390817-2bdb4a00-2056-11eb-8910-362278d9897e.jpeg)
+![Bildschirmfoto 2023-03-04 um 00 14 54](https://user-images.githubusercontent.com/74063738/222853433-123aac02-f3b0-4978-9f7a-eecd48963417.png)
 
 Zum Festlegen der Kreise kann der genaue Name oder Nummer des Kreises beim RKI eingegeben werden. Die einzelnen Kreise werden durch Semikolon getrennt. Bei Eingabe von "lokal" wird der Kraus auf Basis des aktuellen Standortes ausgegeben.
 
