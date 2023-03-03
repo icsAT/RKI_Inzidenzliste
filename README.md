@@ -1,6 +1,6 @@
 # RKI Inzidenzliste (Scriptable App für Apple Devices)
 
-Scriptable iOS COVID-19 Inzidenz-Widget auf Basis der RKI Daten zur Anzeige mehrerer Landkreise innerhalb Deutschlands 🇩🇪
+Corona (COVID-19) Inzidenz-Widget auf Basis der RKI Daten zur Anzeige mehrerer Landkreise innerhalb Deutschlands 🇩🇪 (Scriptable App für Apple Devices)
 
 
 # Beschreibung:
