@@ -21,6 +21,11 @@ Da detaillierte Anleitungen überall zu finden sind verzichte ich hier darauf.
 # Versionen:
 
 
+Version 0.83:
+
+Fehlerkorrektur.
+
+
 Version 0.82:
 
 Änderung der Datenquelle für neue Fallzahlen.
