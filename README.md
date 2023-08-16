@@ -1,3 +1,10 @@
+# ACHTUNG: Keine Aktualiserung mehr
+
+Das Skript wird nicht mehr aktualisiert, da das RKI die bisher verwendete API nicht mehr aktualisiert.
+Daten können nur noch über Flat-Files abgerufen werden, die im Scriptable Widget aus Speichergründen nicht handelbar sind.
+Die Umstellung auf eine alternative API scheint darüberhinaus nicht sinnvoll, da die Daten auf Grund fehlender Tests ohnehin wenig aussagekraft haben.
+
+
 # RKI Inzidenzliste (Scriptable App für Apple Devices)
 
 Corona (COVID-19) Inzidenz-Widget auf Basis der RKI Daten zur Anzeige mehrerer Landkreise innerhalb Deutschlands 🇩🇪 (Scriptable App für Apple Devices)
